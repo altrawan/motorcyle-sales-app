@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.1000000000000092"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="toDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     t_pelanggan.`kd_pelanggan` AS t_pelanggan_kd_pelanggan,
+     t_pelanggan.`nik` AS t_pelanggan_nik,
+     t_pelanggan.`nm_pelanggan` AS t_pelanggan_nm_pelanggan,
+     t_pelanggan.`jns_kelamin` AS t_pelanggan_jns_kelamin,
+     t_pelanggan.`almt_pelanggan` AS t_pelanggan_almt_pelanggan,
+     t_pelanggan.`no_kk` AS t_pelanggan_no_kk,
+     t_pelanggan.`no_hp` AS t_pelanggan_no_hp,
+     t_pelanggan.`keterangan` AS t_pelanggan_keterangan,
+     t_pelanggan.`status` AS t_pelanggan_status,
+     t_pelanggan.`created_at` AS t_pelanggan_created_at,
+     t_pelanggan.`updated_at` AS t_pelanggan_updated_at,
+     t_pelanggan.`deleted_at` AS t_pelanggan_deleted_at,
+     t_belicash.`kd_belicash` AS t_belicash_kd_belicash,
+     t_belicash.`tgl_beli` AS t_belicash_tgl_beli,
+     t_belicash.`kd_pelanggan` AS t_belicash_kd_pelanggan,
+     t_belicash.`kd_motor` AS t_belicash_kd_motor,
+     t_belicash.`total` AS t_belicash_total,
+     t_belicash.`bayar` AS t_belicash_bayar,
+     t_belicash.`kembalian` AS t_belicash_kembalian,
+     t_belicash.`keterangan` AS t_belicash_keterangan,
+     t_belicash.`status` AS t_belicash_status,
+     t_belicash.`created_at` AS t_belicash_created_at,
+     t_belicash.`updated_at` AS t_belicash_updated_at,
+     t_belicash.`deleted_at` AS t_belicash_deleted_at,
+     t_motor.`kd_motor` AS t_motor_kd_motor,
+     t_motor.`jenis` AS t_motor_jenis,
+     t_motor.`type` AS t_motor_type,
+     t_motor.`warna` AS t_motor_warna,
+     t_motor.`harga` AS t_motor_harga,
+     t_motor.`gambar` AS t_motor_gambar,
+     t_motor.`status` AS t_motor_status,
+     t_motor.`created_at` AS t_motor_created_at,
+     t_motor.`updated_at` AS t_motor_updated_at,
+     t_motor.`deleted_at` AS t_motor_deleted_at
+FROM
+     `t_belicash` t_belicash INNER JOIN `t_motor` t_motor ON t_belicash.`kd_motor` = t_motor.`kd_motor`
+     INNER JOIN `t_pelanggan` t_pelanggan ON t_belicash.`kd_pelanggan` = t_pelanggan.`kd_pelanggan` AND t_belicash.`tgl_beli` BETWEEN $P{fromDate} AND $P{toDate}]]>
+	</queryString>
+	<field name="t_pelanggan_kd_pelanggan" class="java.lang.String"/>
+	<field name="t_pelanggan_nik" class="java.lang.String"/>
+	<field name="t_pelanggan_nm_pelanggan" class="java.lang.String"/>
+	<field name="t_pelanggan_jns_kelamin" class="java.lang.String"/>
+	<field name="t_pelanggan_almt_pelanggan" class="java.lang.String"/>
+	<field name="t_pelanggan_no_kk" class="java.lang.String"/>
+	<field name="t_pelanggan_no_hp" class="java.lang.String"/>
+	<field name="t_pelanggan_keterangan" class="java.lang.String"/>
+	<field name="t_pelanggan_status" class="java.lang.String"/>
+	<field name="t_pelanggan_created_at" class="java.sql.Timestamp"/>
+	<field name="t_pelanggan_updated_at" class="java.sql.Timestamp"/>
+	<field name="t_pelanggan_deleted_at" class="java.sql.Timestamp"/>
+	<field name="t_belicash_kd_belicash" class="java.lang.String"/>
+	<field name="t_belicash_tgl_beli" class="java.sql.Date"/>
+	<field name="t_belicash_kd_pelanggan" class="java.lang.String"/>
+	<field name="t_belicash_kd_motor" class="java.lang.String"/>
+	<field name="t_belicash_total" class="java.lang.Integer"/>
+	<field name="t_belicash_bayar" class="java.lang.Integer"/>
+	<field name="t_belicash_kembalian" class="java.lang.Integer"/>
+	<field name="t_belicash_keterangan" class="java.lang.String"/>
+	<field name="t_belicash_status" class="java.lang.String"/>
+	<field name="t_belicash_created_at" class="java.sql.Timestamp"/>
+	<field name="t_belicash_updated_at" class="java.sql.Timestamp"/>
+	<field name="t_belicash_deleted_at" class="java.sql.Timestamp"/>
+	<field name="t_motor_kd_motor" class="java.lang.String"/>
+	<field name="t_motor_jenis" class="java.lang.String"/>
+	<field name="t_motor_type" class="java.lang.String"/>
+	<field name="t_motor_warna" class="java.lang.String"/>
+	<field name="t_motor_harga" class="java.lang.Integer"/>
+	<field name="t_motor_gambar" class="java.lang.String"/>
+	<field name="t_motor_status" class="java.lang.String"/>
+	<field name="t_motor_created_at" class="java.sql.Timestamp"/>
+	<field name="t_motor_updated_at" class="java.sql.Timestamp"/>
+	<field name="t_motor_deleted_at" class="java.sql.Timestamp"/>
+	<group name="t_belicash_kd_belicash">
+		<groupExpression><![CDATA[$F{t_belicash_kd_belicash}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<image>
+				<reportElement x="56" y="1" width="76" height="78"/>
+				<imageExpression><![CDATA["D:\\Modul\\PenjualanMotor\\src\\id\\sch\\smkn1kawali\\penjualanmotor\\images\\logo-100.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="135" y="34" width="595" height="25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT. PUTRA PRATAMA MOTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="59" width="595" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Talagasari No.36 Kawali-Ciamis 46153]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="0" width="595" height="33"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN TRANSAKSI CASH PEMBELIAN MOTOR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="46" y="14" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="14" width="193" height="20"/>
+				<textElement/>
+				<text><![CDATA[Laporan Transaksi Cash Pembelian Motor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="-3" width="802" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="14" width="44" height="20"/>
+				<textElement/>
+				<text><![CDATA[Perihal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="36" width="44" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="36" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="53" y="36" width="193" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="52" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE CASH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="0" width="79" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL BELI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="0" width="66" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE PLG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="0" width="66" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="0" width="92" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="0" width="123" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="0" width="49" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE MOTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="528" y="0" width="66" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="594" y="0" width="66" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[WARNA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="660" y="0" width="66" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="726" y="0" width="76" height="30"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KETERANGAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_belicash_kd_belicash}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yy">
+				<reportElement x="53" y="0" width="79" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_belicash_tgl_beli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_belicash_kd_pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pelanggan_nik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="0" width="92" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pelanggan_nm_pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="0" width="123" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_pelanggan_almt_pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="0" width="49" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_belicash_kd_motor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="528" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_motor_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="594" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_motor_warna}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_motor_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="726" y="0" width="76" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_belicash_keterangan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="682" y="4" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="4" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="4" width="207" height="20"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Transaksi Cash Pembelian Motor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="802" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

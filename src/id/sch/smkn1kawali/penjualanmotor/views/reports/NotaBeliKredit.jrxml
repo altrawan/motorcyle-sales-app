@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.771561000000041"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="126"/>
+	<parameter name="kode" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     t_pelanggan.`kd_pelanggan` AS t_pelanggan_kd_pelanggan,
+     t_pelanggan.`nik` AS t_pelanggan_nik,
+     t_pelanggan.`nm_pelanggan` AS t_pelanggan_nm_pelanggan,
+     t_pelanggan.`jns_kelamin` AS t_pelanggan_jns_kelamin,
+     t_pelanggan.`almt_pelanggan` AS t_pelanggan_almt_pelanggan,
+     t_pelanggan.`no_kk` AS t_pelanggan_no_kk,
+     t_pelanggan.`no_hp` AS t_pelanggan_no_hp,
+     t_pelanggan.`keterangan` AS t_pelanggan_keterangan,
+     t_pelanggan.`status` AS t_pelanggan_status,
+     t_pelanggan.`created_at` AS t_pelanggan_created_at,
+     t_pelanggan.`updated_at` AS t_pelanggan_updated_at,
+     t_pelanggan.`deleted_at` AS t_pelanggan_deleted_at,
+     t_beli.`kd_beli` AS t_beli_kd_beli,
+     t_beli.`tanggal` AS t_beli_tanggal,
+     t_beli.`kd_user` AS t_beli_kd_user,
+     t_beli.`kd_pelanggan` AS t_beli_kd_pelanggan,
+     t_beli.`tipe` AS t_beli_tipe,
+     t_beli.`diskon` AS t_beli_diskon,
+     t_beli.`pajak` AS t_beli_pajak,
+     t_beli.`bunga` AS t_beli_bunga,
+     t_beli.`uang_muka` AS t_beli_uang_muka,
+     t_beli.`lama_cicilan` AS t_beli_lama_cicilan,
+     t_beli.`angsuran` AS t_beli_angsuran,
+     t_beli.`keterangan` AS t_beli_keterangan,
+     t_bayar.`kd_bayar` AS t_bayar_kd_bayar,
+     t_bayar.`tanggal` AS t_bayar_tanggal,
+     t_bayar.`kd_beli` AS t_bayar_kd_beli,
+     t_bayar.`kd_motor` AS t_bayar_kd_motor,
+     t_bayar.`qty` AS t_bayar_qty,
+     t_bayar.`total` AS t_bayar_total,
+     t_bayar.`bayar` AS t_bayar_bayar,
+     t_bayar.`kembalian` AS t_bayar_kembalian,
+     t_bayar.`sisa` AS t_bayar_sisa,
+     t_motor.`kd_motor` AS t_motor_kd_motor,
+     t_motor.`jenis` AS t_motor_jenis,
+     t_motor.`type` AS t_motor_type,
+     t_motor.`warna` AS t_motor_warna,
+     t_motor.`harga` AS t_motor_harga,
+     t_motor.`gambar` AS t_motor_gambar,
+     t_motor.`stok` AS t_motor_stok,
+     t_motor.`keterangan` AS t_motor_keterangan,
+     t_motor.`status` AS t_motor_status,
+     t_motor.`created_at` AS t_motor_created_at,
+     t_motor.`updated_at` AS t_motor_updated_at,
+     t_motor.`deleted_at` AS t_motor_deleted_at,
+     t_user.`kd_user` AS t_user_kd_user,
+     t_user.`name` AS t_user_name,
+     t_user.`username` AS t_user_username,
+     t_user.`email` AS t_user_email,
+     t_user.`password` AS t_user_password,
+     t_user.`role` AS t_user_role,
+     t_user.`remember_token` AS t_user_remember_token,
+     t_user.`status` AS t_user_status,
+     t_user.`created_at` AS t_user_created_at,
+     t_user.`updated_at` AS t_user_updated_at,
+     t_user.`deleted_at` AS t_user_deleted_at
+FROM
+     `t_beli` t_beli INNER JOIN `t_pelanggan` t_pelanggan ON t_beli.`kd_pelanggan` = t_pelanggan.`kd_pelanggan`
+     INNER JOIN `t_user` t_user ON t_beli.`kd_user` = t_user.`kd_user`
+     INNER JOIN `t_bayar` t_bayar ON t_beli.`kd_beli` = t_bayar.`kd_beli`
+     INNER JOIN `t_motor` t_motor ON t_bayar.`kd_motor` = t_motor.`kd_motor` WHERE t_beli.`kd_beli` = $P{kode}]]>
+	</queryString>
+	<field name="t_pelanggan_kd_pelanggan" class="java.lang.String"/>
+	<field name="t_pelanggan_nik" class="java.lang.String"/>
+	<field name="t_pelanggan_nm_pelanggan" class="java.lang.String"/>
+	<field name="t_pelanggan_jns_kelamin" class="java.lang.String"/>
+	<field name="t_pelanggan_almt_pelanggan" class="java.lang.String"/>
+	<field name="t_pelanggan_no_kk" class="java.lang.String"/>
+	<field name="t_pelanggan_no_hp" class="java.lang.String"/>
+	<field name="t_pelanggan_keterangan" class="java.lang.String"/>
+	<field name="t_pelanggan_status" class="java.lang.String"/>
+	<field name="t_pelanggan_created_at" class="java.sql.Timestamp"/>
+	<field name="t_pelanggan_updated_at" class="java.sql.Timestamp"/>
+	<field name="t_pelanggan_deleted_at" class="java.sql.Timestamp"/>
+	<field name="t_beli_kd_beli" class="java.lang.String"/>
+	<field name="t_beli_tanggal" class="java.sql.Timestamp"/>
+	<field name="t_beli_kd_user" class="java.lang.String"/>
+	<field name="t_beli_kd_pelanggan" class="java.lang.String"/>
+	<field name="t_beli_tipe" class="java.lang.String"/>
+	<field name="t_beli_diskon" class="java.lang.Integer"/>
+	<field name="t_beli_pajak" class="java.lang.Integer"/>
+	<field name="t_beli_bunga" class="java.lang.Integer"/>
+	<field name="t_beli_uang_muka" class="java.lang.Integer"/>
+	<field name="t_beli_lama_cicilan" class="java.lang.Integer"/>
+	<field name="t_beli_angsuran" class="java.lang.Integer"/>
+	<field name="t_beli_keterangan" class="java.lang.String"/>
+	<field name="t_bayar_kd_bayar" class="java.lang.Long"/>
+	<field name="t_bayar_tanggal" class="java.sql.Timestamp"/>
+	<field name="t_bayar_kd_beli" class="java.lang.String"/>
+	<field name="t_bayar_kd_motor" class="java.lang.String"/>
+	<field name="t_bayar_qty" class="java.lang.Integer"/>
+	<field name="t_bayar_total" class="java.lang.Integer"/>
+	<field name="t_bayar_bayar" class="java.lang.Integer"/>
+	<field name="t_bayar_kembalian" class="java.lang.Integer"/>
+	<field name="t_bayar_sisa" class="java.lang.Integer"/>
+	<field name="t_motor_kd_motor" class="java.lang.String"/>
+	<field name="t_motor_jenis" class="java.lang.String"/>
+	<field name="t_motor_type" class="java.lang.String"/>
+	<field name="t_motor_warna" class="java.lang.String"/>
+	<field name="t_motor_harga" class="java.lang.Integer"/>
+	<field name="t_motor_gambar" class="java.lang.String"/>
+	<field name="t_motor_stok" class="java.lang.Integer"/>
+	<field name="t_motor_keterangan" class="java.lang.String"/>
+	<field name="t_motor_status" class="java.lang.String"/>
+	<field name="t_motor_created_at" class="java.sql.Timestamp"/>
+	<field name="t_motor_updated_at" class="java.sql.Timestamp"/>
+	<field name="t_motor_deleted_at" class="java.sql.Timestamp"/>
+	<field name="t_user_kd_user" class="java.lang.String"/>
+	<field name="t_user_name" class="java.lang.String"/>
+	<field name="t_user_username" class="java.lang.String"/>
+	<field name="t_user_email" class="java.lang.String"/>
+	<field name="t_user_password" class="java.lang.String"/>
+	<field name="t_user_role" class="java.lang.String"/>
+	<field name="t_user_remember_token" class="java.lang.String"/>
+	<field name="t_user_status" class="java.lang.String"/>
+	<field name="t_user_created_at" class="java.sql.Timestamp"/>
+	<field name="t_user_updated_at" class="java.sql.Timestamp"/>
+	<field name="t_user_deleted_at" class="java.sql.Timestamp"/>
+	<group name="t_beli_kd_beli">
+		<groupExpression><![CDATA[$F{t_beli_kd_beli}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<image>
+				<reportElement x="145" y="4" width="76" height="78"/>
+				<imageExpression><![CDATA["D:\\Modul\\PenjualanMotor\\src\\id\\sch\\smkn1kawali\\penjualanmotor\\images\\logo-100.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="1" y="88" width="802" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="224" y="62" width="428" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Talagasari No.36 Kawali-Ciamis 46153]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="37" width="428" height="25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT. PUTRA PRATAMA MOTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="3" width="428" height="33"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA PEMBELIAN KREDIT MOTOR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="85" y="32" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="32" width="83" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama Pelanggan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="10" width="82" height="20"/>
+				<textElement/>
+				<text><![CDATA[Kode Pembelian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="10" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="10" width="83" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="677" y="10" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="677" y="32" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="32" width="83" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama Kasir]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="91" y="32" width="115" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{t_pelanggan_nm_pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="10" width="115" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{t_beli_kd_beli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="683" y="10" width="118" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{t_beli_kd_beli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="683" y="32" width="118" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{t_user_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="28" y="0" width="95" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="123" y="0" width="83" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[WARNA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="28" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="206" y="0" width="105" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="311" y="0" width="67" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DISKON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="378" y="0" width="66" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAJAK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="444" y="0" width="57" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="501" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="601" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BAYAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="701" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KEMBALIAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="0" width="95" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_motor_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="28" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="0" width="83" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_motor_warna}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="0" width="105" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Rp. " + new java.text.DecimalFormat("#,#00", new java.text.DecimalFormatSymbols(new java.util.Locale("id"))).format($F{t_motor_harga})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="0" width="67" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_beli_diskon} + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_beli_pajak} + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="57" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{t_bayar_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="0" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Rp. " + new java.text.DecimalFormat("#,#00", new java.text.DecimalFormatSymbols(new java.util.Locale("id"))).format($F{t_bayar_total})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="601" y="0" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Rp. " + new java.text.DecimalFormat("#,#00", new java.text.DecimalFormatSymbols(new java.util.Locale("id"))).format($F{t_bayar_bayar})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="701" y="0" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Rp. " + new java.text.DecimalFormat("#,#00", new java.text.DecimalFormatSymbols(new java.util.Locale("id"))).format($F{t_bayar_kembalian})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="82" y="31" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="31" width="83" height="20"/>
+				<textElement/>
+				<text><![CDATA[Uang Muka]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="10" width="82" height="20"/>
+				<textElement/>
+				<text><![CDATA[Bunga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="10" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="82" height="20"/>
+				<textElement/>
+				<text><![CDATA[Lama Cicilan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="73" width="82" height="20"/>
+				<textElement/>
+				<text><![CDATA[Angsuran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="52" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="73" width="6" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="91" y="10" width="115" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{t_beli_bunga} + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="32" width="115" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Rp. " + new java.text.DecimalFormat("#,#00", new java.text.DecimalFormatSymbols(new java.util.Locale("id"))).format($F{t_beli_uang_muka})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="53" width="115" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{t_beli_lama_cicilan} + " Bulan"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="73" width="115" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Rp. " + new java.text.DecimalFormat("#,#00", new java.text.DecimalFormatSymbols(new java.util.Locale("id"))).format($F{t_beli_angsuran})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="4" width="801" height="31"/>
+				<textElement textAlignment="Center">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Terima kasih atas kedatangannya dan kami tunggu kedatangannya kembali.
+Tegurlah karyawan kami apabila tidak memberikan senyum dan sapaan.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="1" width="802" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
